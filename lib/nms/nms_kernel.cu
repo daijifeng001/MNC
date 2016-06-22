@@ -1,9 +1,9 @@
-// ------------------------------------------------------------------
-// Faster R-CNN
-// Copyright (c) 2015 Microsoft
-// Licensed under The MIT License [see fast-rcnn/LICENSE for details]
-// Written by Shaoqing Ren
-// ------------------------------------------------------------------
+// --------------------------------------------------------
+// Multitask Network Cascade
+// Modified from MATLAB Faster R-CNN (https://github.com/shaoqingren/faster_rcnn)
+// Copyright (c) 2016, Haozhi Qi
+// Licensed under The MIT License [see LICENSE for details]
+// --------------------------------------------------------
 
 #include "gpu_nms.hpp"
 #include <vector>

@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# Multitask Network Cascade
+# Written by Haozhi Qi
+# Copyright (c) 2016, Haozhi Qi
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 import cv2
 import yaml
 import scipy

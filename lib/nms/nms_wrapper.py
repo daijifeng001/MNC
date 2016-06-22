@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# Multitask Network Cascade
+# Modified from py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
+# Copyright (c) 2016, Haozhi Qi
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
 
 from mnc_config import cfg
 from gpu_nms import gpu_nms

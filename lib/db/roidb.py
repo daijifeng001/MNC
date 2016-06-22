@@ -1,8 +1,8 @@
 # --------------------------------------------------------
 # Multitask Network Cascade
-# Copyright (c) 2016 Microsoft
+# Modified from py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
+# Copyright (c) 2016, Haozhi Qi
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Ross Girshick and Sean Bell
 # --------------------------------------------------------
 
 import PIL

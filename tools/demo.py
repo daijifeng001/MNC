@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# Multitask Network Cascade
+# Modified from py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
+# Copyright (c) 2016, Haozhi Qi
+# Licensed under The MIT License [see LICENSE for details]
+# --------------------------------------------------------
+
 #!/usr/bin/python
 # Standard module
 import os

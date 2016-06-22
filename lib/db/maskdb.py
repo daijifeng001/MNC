@@ -1,8 +1,8 @@
 # --------------------------------------------------------
 # Multitask Network Cascade
-# Copyright (c) 2016 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
 # Written by Haozhi Qi
+# Copyright (c) 2016, Haozhi Qi
+# Licensed under The MIT License [see LICENSE for details]
 # --------------------------------------------------------
 
 from mnc_config import cfg
