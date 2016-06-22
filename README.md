@@ -98,7 +98,7 @@ This repository contains code to **end-to-end** train MNC for instance-aware sem
 
 0. Run `./data/scripts/fetch_imagenet_models.sh` to download the ImageNet pre-trained VGG-16 net. 
 0. Download the VOC 2007 dataset to ./data/VOCdevkit2007
-0. Run `./data/scripts/fetch_sbd_data.sh` to download the additional segmentation annotations in [SBD](http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html) to ./data/VOCdevkitSDS.
+0. Run `./data/scripts/fetch_sbd_data.sh` to download the VOC 2012 dataset together with the additional segmentation annotations in [SBD](http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html) to ./data/VOCdevkitSDS.
 
 #### 1. End-to-end training of Faster-RCNN for object detection
 
