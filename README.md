@@ -100,21 +100,7 @@ This repository contains code to **end-to-end** train MNC for instance-aware sem
 0. Download the VOC 2007 dataset to ./data/VOCdevkit2007
 0. Run `./data/scripts/fetch_sbd_data.sh` to download the VOC 2012 dataset together with the additional segmentation annotations in [SBD](http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html) to ./data/VOCdevkitSDS.
 
-#### 1. End-to-end training of Faster-RCNN for object detection
-
-Faster-RCNN can be viewed as a 2-stage cascades composed of region proposal network (RPN) and object detection network. We first present end-to-end training results on this relatively simple network cascades.
-
-Run script `experiments/scripts/faster_rcnn_end2end.sh` to train a Faster-RCNN model on VOC 2007 trainval. Final mAP^b should be ~69.1% on VOC 2007 test.
-
-```Shell
-cd $MNC_ROOT
-./experiments/scripts/faster_rcnn_end2end.sh [GPU_ID] VGG16 [--set ...]
-# GPU_ID is the GPU you want to train on
-# --set ... allows you to specify fast_rcnn.config options, e.g.
-#   --set EXP_DIR seed_rng1701 RNG_SEED 1701
-```
-
-#### 2. End-to-end training of MNC for instance-aware semantic segmentation
+#### 1. End-to-end training of MNC for instance-aware semantic segmentation
 
 To end-to-end train a 5-stage MNC model (on VOC 2012 train), use `experiments/scripts/mnc_5stage.sh`. Final mAP^r@0.5 should be ~65.0% (mAP^r@0.7 should be ~46.3%), on VOC 2012 validation.
 
@@ -126,11 +112,11 @@ cd $MNC_ROOT
 #   --set EXP_DIR seed_rng 1701 RNG_SEED 1701
 ```
 
-#### 3. Training of CFM for instance-aware semantic segmentation
+#### 2. Training of CFM for instance-aware semantic segmentation
 
-The code also includes an entry to train a convolutional feature masking (CFM) model for instance aware semantic segmentation.
+The code also includes an entry to train a [convolutional feature masking](https://arxiv.org/abs/1412.1283) (CFM) model for instance aware semantic segmentation.
 
-##### 3.1. Download pre-computed MCG proposals
+##### 2.1. Download pre-computed MCG proposals
 
 Download and process the pre-computed MCG proposals.
 
@@ -142,7 +128,7 @@ python ./tools/prepare_mcg_maskdb.py --para_job 24 --db val --output data/cache/
 ```
 Resulting proposals would be at folder ```data/MCG/```.
 
-##### 3.2. Train the model
+##### 2.2. Train the model
 
 Run `experiments/scripts/cfm.sh` to train on VOC 2012 train set. Final mAP^r@0.5 should be ~60.5% (mAP^r@0.7 should be ~42.6%), on VOC 2012 validation.
 
@@ -152,4 +138,18 @@ cd $MNC_ROOT
 # GPU_ID is the GPU you want to train on
 # --set ... allows you to specify fast_rcnn.config options, e.g.
 #   --set EXP_DIR seed_rng 1701 RNG_SEED 1701
+```
+
+#### 3. End-to-end training of Faster-RCNN for object detection
+
+Faster-RCNN can be viewed as a 2-stage cascades composed of region proposal network (RPN) and object detection network. We first present end-to-end training results on this relatively simple network cascades.
+
+Run script `experiments/scripts/faster_rcnn_end2end.sh` to train a Faster-RCNN model on VOC 2007 trainval. Final mAP^b should be ~69.1% on VOC 2007 test.
+
+```Shell
+cd $MNC_ROOT
+./experiments/scripts/faster_rcnn_end2end.sh [GPU_ID] VGG16 [--set ...]
+# GPU_ID is the GPU you want to train on
+# --set ... allows you to specify fast_rcnn.config options, e.g.
+#   --set EXP_DIR seed_rng1701 RNG_SEED 1701
 ```
