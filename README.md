@@ -116,12 +116,12 @@ cd $MNC_ROOT
 
 The code also includes an entry to train a [convolutional feature masking](https://arxiv.org/abs/1412.1283) (CFM) model for instance aware semantic segmentation.
 
-@inproceedings{dai2016instance,
-    title={blabala},
-    author={Dai, Jifeng and He, Kaiming and Sun, Jian},
-    booktitle={CVPR},
-    year={2016}
-}
+    @inproceedings{dai2015convolutional,
+        title={Convolutional Feature Masking for Joint Object and Stuff Segmentation},
+        author={Dai, Jifeng and He, Kaiming and Sun, Jian},
+        booktitle={CVPR},
+        year={2015}
+    }
 
 ##### 2.1. Download pre-computed MCG proposals
 
