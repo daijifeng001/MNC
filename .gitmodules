@@ -1,0 +1,3 @@
+[submodule "caffe-mnc"]
+	path = caffe-mnc
+	url = https://github.com/daijifeng001/caffe-mnc.git
