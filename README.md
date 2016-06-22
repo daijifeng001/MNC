@@ -116,7 +116,7 @@ cd $MNC_ROOT
 
 #### 2. End-to-end training of MNC for instance-aware semantic segmentation
 
-To end-to-end train a 5-stage MNC model (on VOC 2012 train), use `experiments/scripts/mnc_5stage.sh`. Final mAP^r should be ~65.0% on VOC 2012 validation.
+To end-to-end train a 5-stage MNC model (on VOC 2012 train), use `experiments/scripts/mnc_5stage.sh`. Final mAP^r@0.5 should be ~65.0%, mAP^r@0.7 should be ~46.3% on VOC 2012 validation.
 
 ```Shell
 cd $MNC_ROOT
@@ -144,7 +144,7 @@ Resulting proposals would be at folder ```data/MCG/```.
 
 ##### 3.2. Train the model
 
-Run `experiments/scripts/cfm.sh` to train on VOC 2012 train set. Final mAP^r should be ~60.5% on VOC 2012 validation.
+Run `experiments/scripts/cfm.sh` to train on VOC 2012 train set. Final mAP^r@0.5 should be ~60.5%, mAP^r@0.7 should be 42.6, on VOC 2012 validation.
 
 ```Shell
 cd $MNC_ROOT

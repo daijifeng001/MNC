@@ -195,6 +195,7 @@ class PascalVOCSeg(PascalVOCDet):
         print 'VOC07 metric? ' + ('Yes' if use_07_metric else 'No')
         if not os.path.isdir(output_dir):
             os.mkdir(output_dir)
+        print '~~~~~~ Evaluation use min overlap = 0.5 ~~~~~~'
         for i, cls in enumerate(self._classes):
             if cls == '__background__':
                 continue
@@ -203,5 +204,18 @@ class PascalVOCSeg(PascalVOCDet):
             ap = voc_eval_sds(det_filename, seg_filename, gt_dir,
                               imageset_file, cls, cache_dir, self._classes, ov_thresh=0.5)
             aps += [ap]
-            print('AP for {} = {:.4f}'.format(cls, ap))
-        print('Mean AP = {:.4f}'.format(np.mean(aps)))
+            print('AP for {} = {:.2f}'.format(cls, ap*100))
+        print('Mean AP@0.5 = {:.2f}'.format(np.mean(aps)*100))
+        print '~~~~~~ Evaluation use min overlap = 0.7 ~~~~~~'
+        aps = []
+        for i, cls in enumerate(self._classes):
+            if cls == '__background__':
+                continue
+            det_filename = os.path.join(output_dir, cls + '_det.pkl')
+            seg_filename = os.path.join(output_dir, cls + '_seg.pkl')
+            ap = voc_eval_sds(det_filename, seg_filename, gt_dir,
+                              imageset_file, cls, cache_dir, self._classes, ov_thresh=0.7)
+            aps += [ap]
+            print('AP for {} = {:.2f}'.format(cls, ap*100))
+        print('Mean AP@0.7 = {:.2f}'.format(np.mean(aps)*100))
+
