@@ -31,7 +31,7 @@ MNC is released under the MIT License (refer to the LICENSE file for details).
 
 If you find MNC useful in your research, please consider citing:
 
-    @inproceedings{dai2015instance,
+    @inproceedings{dai2016instance,
         title={Instance-aware Semantic Segmentation via Multi-task Network Cascades},
         author={Dai, Jifeng and He, Kaiming and Sun, Jian},
         booktitle={CVPR},
