@@ -2,7 +2,7 @@
 
 By Jifeng Dai, Kaiming He, Jian Sun
 
-This python version is implemented by [Haozhi Qi](https://github.com/Oh233) when he was an intern at Microsoft Research.
+This python version is re-implemented by [Haozhi Qi](https://github.com/Oh233) when he was an intern at Microsoft Research.
 
 ### Introduction
 
@@ -115,6 +115,13 @@ cd $MNC_ROOT
 #### 2. Training of CFM for instance-aware semantic segmentation
 
 The code also includes an entry to train a [convolutional feature masking](https://arxiv.org/abs/1412.1283) (CFM) model for instance aware semantic segmentation.
+
+@inproceedings{dai2016instance,
+    title={blabala},
+    author={Dai, Jifeng and He, Kaiming and Sun, Jian},
+    booktitle={CVPR},
+    year={2016}
+}
 
 ##### 2.1. Download pre-computed MCG proposals
 
