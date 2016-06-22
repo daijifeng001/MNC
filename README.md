@@ -142,9 +142,7 @@ cd $MNC_ROOT
 
 #### 3. End-to-end training of Faster-RCNN for object detection
 
-Faster-RCNN can be viewed as a 2-stage cascades composed of region proposal network (RPN) and object detection network. We first present end-to-end training results on this relatively simple network cascades.
-
-Run script `experiments/scripts/faster_rcnn_end2end.sh` to train a Faster-RCNN model on VOC 2007 trainval. Final mAP^b should be ~69.1% on VOC 2007 test.
+Faster-RCNN can be viewed as a 2-stage cascades composed of region proposal network (RPN) and object detection network. Run script `experiments/scripts/faster_rcnn_end2end.sh` to train a Faster-RCNN model on VOC 2007 trainval. Final mAP^b should be ~69.1% on VOC 2007 test.
 
 ```Shell
 cd $MNC_ROOT
