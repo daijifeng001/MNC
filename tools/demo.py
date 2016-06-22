@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # --------------------------------------------------------
 # Multitask Network Cascade
 # Modified from py-faster-rcnn (https://github.com/rbgirshick/py-faster-rcnn)
@@ -5,7 +7,6 @@
 # Licensed under The MIT License [see LICENSE for details]
 # --------------------------------------------------------
 
-#!/usr/bin/python
 # Standard module
 import os
 import argparse
