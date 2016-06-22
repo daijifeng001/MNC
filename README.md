@@ -128,7 +128,7 @@ cd $MNC_ROOT
 
 #### 3. Training of CFM for instance-aware semantic segmentation
 
-The code also includes an entry to tain a convolutional feature masking (CFM) model for instance aware semantic segmentation.
+The code also includes an entry to train a convolutional feature masking (CFM) model for instance aware semantic segmentation.
 
 ##### 3.1. Download pre-computed MCG proposals
 
@@ -144,7 +144,7 @@ Resulting proposals would be at folder ```data/MCG/```.
 
 ##### 3.2. Train the model
 
-Run `experiments/scripts/cfm.sh` to train on VOC 2012 train set. Final mAP^r@0.5 should be ~60.5%, mAP^r@0.7 should be 42.6, on VOC 2012 validation.
+Run `experiments/scripts/cfm.sh` to train on VOC 2012 train set. Final mAP^r@0.5 should be ~60.5%, mAP^r@0.7 should be 42.6%, on VOC 2012 validation.
 
 ```Shell
 cd $MNC_ROOT
