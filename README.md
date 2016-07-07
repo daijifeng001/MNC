@@ -92,7 +92,7 @@ cd $MNC_ROOT
 ```
 Result demo images will be stored to ```data/demo/```.
 
-The demo performs instance-aware semantic segmentation with a trained MNC model (using VGG-16 net). The model is pre-trained on ImageNet, and finetuned on VOC 2012 train set with additional annotations from [SBD](http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html). The mAP^r of the model is 65.0% on VOC 2012 validation set. The test speed per image is ~0.33sec on Titian X and ~0.42sec on K40.
+The demo performs instance-aware semantic segmentation with a trained MNC model (using VGG-16 net). The model is pre-trained on ImageNet, and finetuned on VOC 2012 train set with additional annotations from [SBD](https://9bc0b5eb4c18f1fc9a28517a91305702c68a10ae.googledrive.com/host/0ByUkob0WA1-NQi1sNlg4WkJQbTg/codes/SBD/download.html). The mAP^r of the model is 65.0% on VOC 2012 validation set. The test speed per image is ~0.33sec on Titian X and ~0.42sec on K40.
 
 ### Training
 
@@ -102,7 +102,7 @@ This repository contains code to **end-to-end** train MNC for instance-aware sem
 
 0. Run `./data/scripts/fetch_imagenet_models.sh` to download the ImageNet pre-trained VGG-16 net. 
 0. Download the VOC 2007 dataset to ./data/VOCdevkit2007
-0. Run `./data/scripts/fetch_sbd_data.sh` to download the VOC 2012 dataset together with the additional segmentation annotations in [SBD](http://www.cs.berkeley.edu/~bharath2/codes/SBD/download.html) to ./data/VOCdevkitSDS.
+0. Run `./data/scripts/fetch_sbd_data.sh` to download the VOC 2012 dataset together with the additional segmentation annotations in [SBD](https://9bc0b5eb4c18f1fc9a28517a91305702c68a10ae.googledrive.com/host/0ByUkob0WA1-NQi1sNlg4WkJQbTg/codes/SBD/download.html) to ./data/VOCdevkitSDS.
 
 #### 1. End-to-end training of MNC for instance-aware semantic segmentation
 
