@@ -20,7 +20,7 @@ This repository includes a bilinear RoI warping layer, which enables gradient ba
 
 ### Misc.
 
-This code has been tested on Linux (Ubuntu 14.04), using K40/Titian X GPUs.
+This code has been tested on Linux (Ubuntu 14.04), using K40/Titan X GPUs.
 
 The code is built based on [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn).
 
