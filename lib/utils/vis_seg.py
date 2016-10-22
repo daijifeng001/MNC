@@ -9,7 +9,7 @@ import numpy as np
 import cPickle
 import os
 import cv2
-import Image
+from PIL import Image
 from mnc_config import cfg
 
 

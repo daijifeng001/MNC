@@ -34,6 +34,7 @@ class StageBridgeLayer(caffe.Layer):
             self._clip_denominator = float(layer_params.get('clip_base', 64))
             self._clip_thresh = 1.0 / self._clip_denominator
             self._feat_stride = layer_params['feat_stride']
+            self._num_classes = layer_params['num_classes']
 
         # meaning of top blobs speak for themselves
         self._top_name_map = {}
@@ -205,7 +206,7 @@ class StageBridgeLayer(caffe.Layer):
         bbox_target_data = np.hstack((labels[:, np.newaxis], bbox_target_data))\
             .astype(np.float32, copy=False)
         bbox_targets, bbox_inside_weights = get_bbox_regression_label(
-            bbox_target_data, 21)
+            bbox_target_data, self._num_classes)
 
         scaled_rois = rois[:, 1:5] / float(im_scale)
         scaled_gt_boxes = gt_boxes[:, :4] / float(im_scale)

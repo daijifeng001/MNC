@@ -579,19 +579,33 @@ layer {
 #------------ Roi Warping ------------
 
 layer {
-  name: "roi_interpolate_conv5"
+  name: "roi_interpolate_conv5_premax"
   type: "ROIWarping"
   bottom: "conv5_3"
   bottom: "rois"
   propagate_down: 1
   propagate_down: 1
-  top: "roi_interpolate_conv5"
+  top: "roi_interpolate_conv5_premax"
   roi_warping_param {
-    pooled_w: 14
-    pooled_h: 14
+    pooled_w: 28
+    pooled_h: 28
     spatial_scale: 0.0625 # 1/16
   }
 }
+
+layer {
+  name: "roi_interpolate_conv5"
+  type: "Pooling"
+  bottom: "roi_interpolate_conv5_premax"
+  top: "roi_interpolate_conv5"
+  pooling_param {
+    kernel_size: 2
+    stride: 2
+    pad: 0
+    pool: MAX
+  }
+}
+
 
 #------------ Mask Estimation ------------
 
@@ -1044,24 +1058,37 @@ layer {
   python_param {
     module: 'pylayer.stage_bridge_layer'
     layer: 'StageBridgeLayer'
-    param_str: "{ 'feat_stride': 16,  'use_clip': 1,  'clip_base': 512 }"
+    param_str: "{ 'feat_stride': 16,  'use_clip': 1,  'clip_base': 512, 'num_classes': 21}"
   }
 }
 
 #------------ Roi Warping Ext ------------
 
 layer {
-  name: "roi_interpolate_conv5_ext"
+  name: "roi_interpolate_conv5_ext_premax"
   type: "ROIWarping"
   bottom: "conv5_3"
   bottom: "rois_ext"
   propagate_down: 1
   propagate_down: 1
-  top: "roi_interpolate_conv5_ext"
+  top: "roi_interpolate_conv5_ext_premax"
   roi_warping_param {
-    pooled_w: 14
-    pooled_h: 14
+    pooled_w: 28
+    pooled_h: 28
     spatial_scale: 0.0625 # 1/16
+  }
+}
+
+layer {
+  name: "roi_interpolate_conv5_ext"
+  type: "Pooling"
+  bottom: "roi_interpolate_conv5_ext_premax"
+  top: "roi_interpolate_conv5_ext"
+  pooling_param {
+    kernel_size: 2
+    stride: 2
+    pad: 0
+    pool: MAX
   }
 }
 
