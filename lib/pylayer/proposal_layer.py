@@ -197,17 +197,17 @@ class ProposalLayer(caffe.Layer):
             h = (unmap_val / self._num_anchors / self._width) % self._height
 
             # width and height should be in feature map scale
-            anchor_w = (self._anchors[c, 2] - self._anchors[c, 0]) / self._feat_stride
-            anchor_h = (self._anchors[c, 3] - self._anchors[c, 1]) / self._feat_stride
+            anchor_w = (self._anchors[c, 2] - self._anchors[c, 0])
+            anchor_h = (self._anchors[c, 3] - self._anchors[c, 1])
             dfdx1 = top[0].diff[top_non_zero_ind, 1]
             dfdy1 = top[0].diff[top_non_zero_ind, 2]
             dfdx2 = top[0].diff[top_non_zero_ind, 3]
             dfdy2 = top[0].diff[top_non_zero_ind, 4]
 
-            dfdxc = 0.5 * (dfdx1 + dfdx2)
-            dfdyc = 0.5 * (dfdy1 + dfdy2)
-            dfdw = dfdx2 - dfdx1
-            dfdh = dfdy2 - dfdy1
+            dfdxc = dfdx1 + dfdx2
+            dfdyc = dfdy1 + dfdy2
+            dfdw = 0.5 * (dfdx2 - dfdx1)
+            dfdh = 0.5 * (dfdy2 - dfdy1)
 
             bottom[1].diff[0, 4*c, h, w] = \
                 dfdxc * anchor_w * weight_out_proposal * weight_out_anchor

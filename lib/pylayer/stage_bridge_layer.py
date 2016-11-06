@@ -114,10 +114,10 @@ class StageBridgeLayer(caffe.Layer):
                     continue
                 delta_w = deltas[i, 4*self._bbox_reg_labels[i]+2]
                 delta_h = deltas[i, 4*self._bbox_reg_labels[i]+3]
-                bottom[1].diff[i, 4*self._bbox_reg_labels[i]] = dfdxc[ind] * W_old[i] / self._feat_stride
-                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+1] = dfdyc[ind] * H_old[i] / self._feat_stride
-                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+2] = dfdw[ind] * np.exp(delta_w) * W_old[i] / self._feat_stride
-                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+3] = dfdh[ind] * np.exp(delta_h) * H_old[i] / self._feat_stride
+                bottom[1].diff[i, 4*self._bbox_reg_labels[i]] = dfdxc[ind] * W_old[i]
+                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+1] = dfdyc[ind] * H_old[i]
+                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+2] = dfdw[ind] * np.exp(delta_w) * W_old[i]
+                bottom[1].diff[i, 4*self._bbox_reg_labels[i]+3] = dfdh[ind] * np.exp(delta_h) * H_old[i]
                 if self._use_clip:
                     bottom[1].diff[i, 4*self._bbox_reg_labels[i]] = np.minimum(np.maximum(
                         bottom[1].diff[i, 4*self._bbox_reg_labels[i]], -self._clip_thresh), self._clip_thresh)
