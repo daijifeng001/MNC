@@ -22,7 +22,7 @@ from utils.blob import prep_im_for_blob, im_list_to_blob
 from transform.mask_transform import gpu_mask_voting
 import matplotlib.pyplot as plt
 from utils.vis_seg import _convert_pred_to_image, _get_voc_color_map
-import Image
+from PIL import Image
 
 # VOC 20 classes
 CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat',
@@ -125,6 +125,7 @@ if __name__ == '__main__':
 
     caffe.set_mode_gpu()
     caffe.set_device(args.gpu_id)
+    cfg.GPU_ID = args.gpu_id
     net = caffe.Net(test_prototxt, test_model, caffe.TEST)
 
     # Warm up for the first two images
