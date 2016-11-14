@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd ${DIR}
 
-URL="https://onedrive.live.com/download?resid=F371D9563727B96F!91968&authkey=!AGcNz7xSH5E98zg"
+URL="https://onedrive.live.com/redir?resid=571EABC0F8C2A19C!1103&authkey=!ALXduVujs-7r6Ug"
 
 echo "Downloading mnc model..."
 
