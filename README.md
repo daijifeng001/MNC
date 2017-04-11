@@ -39,9 +39,9 @@ If you find MNC useful in your research, please consider citing:
     }
 
 ### Main Results
-                   | training data       | test data             | mAP^r@0.5   | mAP^r@0.7   | time (K40)    | time (Titian X)
--------------------|:-------------------:|:---------------------:|:-----------:|:-----------:|:-------------:|:-------------:|
-MNC, VGG-16        | VOC 12 train        | VOC 12 val            | 65.0%       | 46.3%       | 0.42sec/img   | 0.33sec/img
+|                   | training data       | test data             | mAP^r@0.5   | mAP^r@0.7   | time (K40)    | time (Titian X)|
+|-------------------|:-------------------:|:---------------------:|:-----------:|:-----------:|:-------------:|:-------------:|
+|MNC, VGG-16        | VOC 12 train        | VOC 12 val            | 65.0%       | 46.3%       | 0.42sec/img   | 0.33sec/img|
 
 ### Installation guide
 
