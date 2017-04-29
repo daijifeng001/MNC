@@ -9,7 +9,7 @@ This python version is re-implemented by [Haozhi Qi](https://github.com/Oh233) w
 MNC is an instance-aware semantic segmentation system based on deep convolutional networks, which won the first place in COCO segmentation challenge 2015, and test at a fraction of a second per image. We decompose the task of instance-aware semantic segmentation into related sub-tasks, which are solved by multi-task network cascades (MNC) with shared features. The entire MNC network is trained end-to-end with error gradients across cascaded stages.
 
 
-<img src='data/readme_img/example.png', width='800'>
+![example](data/readme_img/example.png)
 
 
 MNC was initially described in a [CVPR 2016 oral paper](http://arxiv.org/abs/1512.04412).
