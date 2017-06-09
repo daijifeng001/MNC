@@ -49,11 +49,11 @@ class StageBridgeLayer(caffe.Layer):
             self._top_name_map['mask_weight'] = 3
             top[4].reshape(1, 4)
             self._top_name_map['gt_mask_info'] = 4
-            top[5].reshape(1, 21 * 4)
+            top[5].reshape(1, self._num_classes * 4)
             self._top_name_map['bbox_targets'] = 5
-            top[6].reshape(1, 21 * 4)
+            top[6].reshape(1, self._num_classes * 4)
             self._top_name_map['bbox_inside_weights'] = 6
-            top[7].reshape(1, 21 * 4)
+            top[7].reshape(1, self._num_classes * 4)
             self._top_name_map['bbox_outside_weights'] = 7
         elif self._phase == 'TEST':
             top[0].reshape(1, 5)
